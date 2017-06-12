@@ -5,6 +5,7 @@ JC = javac
 	$(JC) $(JFLAGS) $*.java
 
 CLASSES = \
+    com/company/TOTP.java \
 	com/company/Main.java 
 
 default: classes

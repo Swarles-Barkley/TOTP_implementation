@@ -7,31 +7,13 @@ import java.util.TimeZone;
 import java.math.BigInteger;
 import java.io.*;
 import java.net.URL;
-import org.apache.commons.*;
 import java.nio.file.Paths;
 //key is 123456712345671234567
 
 public class Main {
-    /*
-    public static String toHex(String arg) {
-        try {
-            return String.format("%040x", new BigInteger(1, arg.getBytes("UTF-16")));
-        }catch(UnsupportedEncodingException e){
-            System.out.println("placeholdererror");
-        }
-        return "";
-    }
-    */
     public static void main(String[] args) {
         String seed = "313233343536373132333435363731323334353637";//hex of base32 of key
         String b32 = "GEZDGNBVGY3TCMRTGQ2TMNZRGIZTINJWG4======";//base32 of key
-        if(argc==2){
-            Base32 base32 = new Base32();
-            base32 = base32.encodeAsString(args[1].getBytes());
-            System.out.println(base32);
-        }
-        //b32 = toHex(b32);
-        //System.out.println("hextest: " + b32);
         // Seed for HMAC-SHA256 - 32 bytes
         String seed32 = "3132333435363738393031323334353637383930" +
                 "313233343536373839303132";
@@ -81,44 +63,6 @@ public class Main {
         } else {
             System.out.println("please either enter --generate-qr or --get-otp as an argument");
         }
-        /*
-        try {
-            System.out.println(
-                    "+---------------+-----------------------+" +
-                            "------------------+--------+--------+");
-            System.out.println(
-                    "|  Time(sec)    |   Time (UTC format)   " +
-                            "| Value of T(Hex)  |  TOTP  | Mode   |");
-            System.out.println(
-                    "+---------------+-----------------------+" +
-                            "------------------+--------+--------+");
 
-            for (int i=0; i<testTime.length; i++) {
-                long T = (testTime[i] - T0)/X;
-                steps = Long.toHexString(T).toUpperCase();
-                while (steps.length() < 16) steps = "0" + steps;
-                String fmtTime = String.format("%1$-11s", testTime[i]);
-                String utcTime = df.format(new Date(testTime[i]*1000));
-                System.out.print("|  " + fmtTime + "  |  " + utcTime +
-                        "  | " + steps + " |");
-                System.out.println(TOTP.generateTOTP(seed, steps, "6",
-                        "HmacSHA1") + "| SHA1   |");
-                System.out.print("|  " + fmtTime + "  |  " + utcTime +
-                        "  | " + steps + " |");
-                System.out.println(TOTP.generateTOTP(seed32, steps, "6",
-                        "HmacSHA256") + "| SHA256 |");
-                System.out.print("|  " + fmtTime + "  |  " + utcTime +
-                        "  | " + steps + " |");
-                System.out.println(TOTP.generateTOTP(seed64, steps, "6",
-                        "HmacSHA512") + "| SHA512 |");
-
-                System.out.println(
-                        "+---------------+-----------------------+" +
-                                "------------------+--------+--------+");
-            }
-        }catch (final Exception e){
-            System.out.println("Error : " + e);
-        }
-    */
     }
 }
