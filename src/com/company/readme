@@ -4,4 +4,6 @@ to encode and decode in base 32 (and go from this to hexadecimal for the TOTP in
 tructure provided) I was unable to write a general solution, but was able to write a com-
 plete solution for the key "123456712345671234567." Because my phone had problems inter-
 acting with GA (primarily an inability to use the '8' or '9' characters) I was unable to
-debug as thoroughly as I'd hope, but believe the solution works anyway.
+debug as thoroughly as I'd hope, but believe the solution works anyway. If there are any
+problems using the makefile/command line, I've posted the project on github here
+https://github.com/Swarles-Barkley/TOTP_implementation
